@@ -1,4 +1,129 @@
-
-main .container  {
-  background-color: red;
+body {
+  background-color: var(--bgColor);
 }
+
+/* start header customize */
+header {
+  position: relative;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--tColor);
+  text-transform: capitalize;
+  height: 100px;
+}
+
+header .container h1 {
+  font-style: italic;
+}
+header .container nav {
+  display: flex;
+  gap: 4rem;
+  font-size: 1.4rem;
+}
+header .container nav li a {
+  position: relative;
+}
+
+header .container nav li a::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  background-color: var(--tColor);
+  left: 1px;
+  bottom: -5px;
+  transition: width .2s;
+}
+header .container nav li a.active::after {
+  width: 25%;
+}
+header .container nav li a:hover::after {
+  width: 100%;
+}
+header .container .icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+header .container .icons i {
+  font-size: 1.5rem;
+}
+header .container .icons a {
+  transition: transform .2s;
+}
+header .container .icons a:hover {
+  transform: scale(1.2);
+}
+header .container .icons .menu {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+header .container .icons .menu span {
+  background-color: var(--tColor);
+  height: 3px;
+  width: 100%;
+  transition: width .2s;
+}
+header .container .icons .menu span:nth-child(2) {
+  width: 50%;
+}
+header .container .icons .menu:hover  span:nth-child(2) {
+  width: 100%;
+}
+
+
+
+header .container aside {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--tColor);
+  transition: transform .6s , filter .4s;
+  transform: scale(0);
+  transform-origin: top right;
+  filter: blur(20px);
+}
+
+
+header .container aside li a {
+  padding: 10px 0;
+  display: block;
+  font-size: 1.2rem;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+#menu-check {
+  display: none;
+}
+
+
+header .container .icons #menu-check:checked ~ aside {
+  transform: scale(1);
+  filter: blur(0px);
+
+}
+
+
+/* start responsive header */
+
+@media (max-width: 992px) {
+  header .container nav {
+    display: none;
+  }
+}
+
+
+/* end responsive header */
+
+
+/* end header customize */

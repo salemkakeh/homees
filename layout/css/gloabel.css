@@ -4,7 +4,7 @@
 
 :root {
   --bgColor: #1c1c1c;
-  --tColor: #FFFFFF;
+  --tColor: #dfdfdf;
   --bgColor2: #2e2e2e;
 }
 
@@ -15,7 +15,12 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--tColor);
+  color: inherit;
+}
+ul,
+aside,
+nav {
+  list-style: none;
 }
 
 .container {
