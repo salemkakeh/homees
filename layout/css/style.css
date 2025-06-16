@@ -1,5 +1,28 @@
 body {
   background-color: var(--bgColor);
+  position: relative;
+
+}
+body::after {
+  content: '';
+  position: absolute;
+  background-color: var(--tColor);
+  width: 100px;
+  height: 200px;
+  filter: blur(100px);
+  transform: rotate(45deg);
+  top: -75px;
+}
+body::before {
+  content: '';
+  position: absolute;
+  background-color: var(--tColor);
+  width: 60px;
+  height: 300px;
+  right: 25%;
+  filter: blur(100px);
+  transform: rotate(45deg);
+  top: 205px;
 }
 
 /* start header customize */
@@ -58,7 +81,7 @@ header .container .icons a:hover {
   transform: scale(1.2);
 }
 header .container .icons .menu {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 30px;
   height: 25px;
@@ -120,6 +143,9 @@ header .container .icons #menu-check:checked ~ aside {
   header .container nav {
     display: none;
   }
+  header .container .icons .menu {
+  display: flex;
+}
 }
 
 
@@ -127,3 +153,54 @@ header .container .icons #menu-check:checked ~ aside {
 
 
 /* end header customize */
+
+main {
+    background-image: url(../images/1.png);
+  background-position: bottom right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+main .container {
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+} 
+main .container > img {
+  position: absolute;
+  top: 60%;
+  right: 30%;
+  width: 150px;
+}
+main .container {
+  text-transform: capitalize;
+  color: var(--tColor);
+}
+
+main .container .text h1 {
+  font-size: 4rem;
+  font-weight: 100;
+  margin: 0;
+}
+main .container .text h1 > span {
+  display: block;
+}
+main .container .text h1 > span span {
+  font-weight: 900;
+}
+main .container .text p {
+  font-size: 1.2rem;
+}
+main .container .text a {
+  background-color: var(--tColor);
+  color: #202202;
+  padding: 10px 40px;
+  
+  display: inline-block;
+  border: 2px solid transparent;
+  transition: .2s;
+}
+main .container .text a:hover {
+  border: 2px solid var(--tColor);
+  background-color: transparent;
+  color: var(--tColor);
+}
