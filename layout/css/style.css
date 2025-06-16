@@ -161,6 +161,7 @@ main {
   background-repeat: no-repeat;
 }
 
+
 main .container {
   height: calc(100vh - 100px);
   padding-top: 100px;
@@ -178,8 +179,31 @@ main .container {
 
 main .container .text h1 {
   font-size: 4rem;
-  font-weight: 100;
+  font-weight: 400;
   margin: 0;
+  position: relative;
+  display: inline-block;
+}
+main .container .text h1::after {
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 20px;
+  border-top: 4px solid #939393;
+  border-right: 4px solid #939393;
+  bottom: 40px;
+  right: -20px;
+  transform: rotate(-45deg);
+}
+main .container .text h1::before {
+  content: '';
+  position: absolute;
+  height: 46px;
+  width: 20px;
+  border-right: 2px solid #939393;
+  bottom: 20px;
+  right: -20px;
+
 }
 main .container .text h1 > span {
   display: block;
@@ -203,4 +227,78 @@ main .container .text a:hover {
   border: 2px solid var(--tColor);
   background-color: transparent;
   color: var(--tColor);
+}
+
+main .container .icons-social {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+main .container .icons-social .icon-social {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+main .container .icons-social .icon-social a i {
+  transition: .2s;
+}
+main .container .icons-social .icon-social a:hover i {
+  transform: scale(1.19);
+}
+
+  .cls-1 {
+    fill: none;
+    stroke: #FFF;
+    stroke-miterlimit: 10;
+    stroke-width: 2PX;
+  }
+  .cls-2 {
+    fill: #FFF;
+    stroke: none;
+    stroke-miterlimit: 10;
+  }
+
+/* start responsive  main */
+@media (max-width: 1200px) {
+  main {
+    background-size: 500px;
+  }
+}
+@media (max-width: 576px) {
+  main {
+    background-size: 100%;
+
+  }
+  main .container > img {
+    display: none;
+  }
+  main .container .text h1 {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+  }
+  main .container .text h1::after,
+  main .container .text h1::before {
+    display: none;
+  }
+    main .container .text p {
+      text-align: center;
+    }
+    main .container .text a {
+      margin: 0 auto;
+      display: block;
+      width: fit-content;
+    }
+}
+
+/* end responsive  main */
+
+
+
+
+section .container {
+  background-color: red;
+  height: 100vh;
 }
