@@ -159,6 +159,7 @@ main {
   background-position: bottom right;
   background-size: contain;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 
@@ -297,8 +298,40 @@ main .container .icons-social .icon-social a:hover i {
 
 
 
+section {
+  background-color: #232323;
+  border-top: 2px solid #fff;
+  position: relative;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  background-color: var(--tColor);
+  width: 100px;
+  height: 200px;
+  filter: blur(80px);
+  right: 150px;
+  overflow: hidden;
+}
 
 section .container {
-  background-color: red;
   height: 100vh;
+  display: flex;
+  align-items: center;
+
+  
+}
+
+
+section .container .images {
+  display: flex;
+  align-items: flex-end;
+}
+section .container .images figure {
+  margin: 0;
+}
+section .container .images figure  img {
+  width: 100%;
 }
