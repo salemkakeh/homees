@@ -3,6 +3,7 @@ body {
   position: relative;
 
 }
+
 body::after {
   content: '';
   position: absolute;
@@ -13,6 +14,7 @@ body::after {
   transform: rotate(45deg);
   top: -75px;
 }
+
 body::before {
   content: '';
   position: absolute;
@@ -29,6 +31,7 @@ body::before {
 header {
   position: relative;
 }
+
 header .container {
   display: flex;
   justify-content: space-between;
@@ -41,11 +44,13 @@ header .container {
 header .container h1 {
   font-style: italic;
 }
+
 header .container nav {
   display: flex;
   gap: 4rem;
   font-size: 1.4rem;
 }
+
 header .container nav li a {
   position: relative;
 }
@@ -60,26 +65,33 @@ header .container nav li a::after {
   bottom: -5px;
   transition: width .2s;
 }
+
 header .container nav li a.active::after {
   width: 25%;
 }
+
 header .container nav li a:hover::after {
   width: 100%;
 }
+
 header .container .icons {
   display: flex;
   align-items: center;
   gap: 30px;
 }
+
 header .container .icons i {
   font-size: 1.5rem;
 }
+
 header .container .icons a {
   transition: transform .2s;
 }
+
 header .container .icons a:hover {
   transform: scale(1.2);
 }
+
 header .container .icons .menu {
   display: none;
   flex-direction: column;
@@ -88,16 +100,19 @@ header .container .icons .menu {
   justify-content: space-between;
   align-items: flex-end;
 }
+
 header .container .icons .menu span {
   background-color: var(--tColor);
   height: 3px;
   width: 100%;
   transition: width .2s;
 }
+
 header .container .icons .menu span:nth-child(2) {
   width: 50%;
 }
-header .container .icons .menu:hover  span:nth-child(2) {
+
+header .container .icons .menu:hover span:nth-child(2) {
   width: 100%;
 }
 
@@ -110,7 +125,7 @@ header .container aside {
   width: 100%;
   text-align: center;
   background-color: var(--tColor);
-  transition: transform .6s , filter .4s;
+  transition: transform .6s, filter .4s;
   transform: scale(0);
   transform-origin: top right;
   filter: blur(20px);
@@ -130,7 +145,7 @@ header .container aside li a {
 }
 
 
-header .container .icons #menu-check:checked ~ aside {
+header .container .icons #menu-check:checked~aside {
   transform: scale(1);
   filter: blur(0px);
 
@@ -143,9 +158,10 @@ header .container .icons #menu-check:checked ~ aside {
   header .container nav {
     display: none;
   }
+
   header .container .icons .menu {
-  display: flex;
-}
+    display: flex;
+  }
 }
 
 
@@ -155,7 +171,7 @@ header .container .icons #menu-check:checked ~ aside {
 /* end header customize */
 
 main {
-    background-image: url(../images/1.png);
+  background-image: url(../images/1.png);
   background-position: bottom right;
   background-size: contain;
   background-repeat: no-repeat;
@@ -166,13 +182,15 @@ main {
 main .container {
   height: calc(100vh - 100px);
   padding-top: 100px;
-} 
-main .container > img {
+}
+
+main .container>img {
   position: absolute;
   top: 60%;
   right: 30%;
   width: 150px;
 }
+
 main .container {
   text-transform: capitalize;
   color: var(--tColor);
@@ -185,6 +203,7 @@ main .container .text h1 {
   position: relative;
   display: inline-block;
 }
+
 main .container .text h1::after {
   content: '';
   position: absolute;
@@ -196,6 +215,7 @@ main .container .text h1::after {
   right: -20px;
   transform: rotate(-45deg);
 }
+
 main .container .text h1::before {
   content: '';
   position: absolute;
@@ -206,24 +226,29 @@ main .container .text h1::before {
   right: -20px;
 
 }
-main .container .text h1 > span {
+
+main .container .text h1>span {
   display: block;
 }
-main .container .text h1 > span span {
+
+main .container .text h1>span span {
   font-weight: 900;
 }
+
 main .container .text p {
   font-size: 1.2rem;
 }
+
 main .container .text a {
   background-color: var(--tColor);
   color: #202202;
   padding: 10px 40px;
-  
+
   display: inline-block;
   border: 2px solid transparent;
   transition: .2s;
 }
+
 main .container .text a:hover {
   border: 2px solid var(--tColor);
   background-color: transparent;
@@ -236,30 +261,34 @@ main .container .icons-social {
   display: flex;
   flex-direction: row-reverse;
 }
+
 main .container .icons-social .icon-social {
   display: flex;
   flex-direction: column;
   gap: 20px;
   font-size: 1.2rem;
 }
+
 main .container .icons-social .icon-social a i {
   transition: .2s;
 }
+
 main .container .icons-social .icon-social a:hover i {
   transform: scale(1.19);
 }
 
-  .cls-1 {
-    fill: none;
-    stroke: #FFF;
-    stroke-miterlimit: 10;
-    stroke-width: 2PX;
-  }
-  .cls-2 {
-    fill: #FFF;
-    stroke: none;
-    stroke-miterlimit: 10;
-  }
+.cls-1 {
+  fill: none;
+  stroke: #FFF;
+  stroke-miterlimit: 10;
+  stroke-width: 2PX;
+}
+
+.cls-2 {
+  fill: #FFF;
+  stroke: none;
+  stroke-miterlimit: 10;
+}
 
 /* start responsive  main */
 @media (max-width: 1200px) {
@@ -267,31 +296,37 @@ main .container .icons-social .icon-social a:hover i {
     background-size: 500px;
   }
 }
+
 @media (max-width: 576px) {
   main {
     background-size: 100%;
 
   }
-  main .container > img {
+
+  main .container>img {
     display: none;
   }
+
   main .container .text h1 {
     font-size: 3rem;
     display: block;
     text-align: center;
   }
+
   main .container .text h1::after,
   main .container .text h1::before {
     display: none;
   }
-    main .container .text p {
-      text-align: center;
-    }
-    main .container .text a {
-      margin: 0 auto;
-      display: block;
-      width: fit-content;
-    }
+
+  main .container .text p {
+    text-align: center;
+  }
+
+  main .container .text a {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+  }
 }
 
 /* end responsive  main */
@@ -317,21 +352,181 @@ section::after {
 }
 
 section .container {
-  height: 100vh;
   display: flex;
   align-items: center;
 
-  
+  padding: 100px 0;
+
+
 }
 
 
 section .container .images {
   display: flex;
   align-items: flex-end;
+  position: relative;
 }
+
+section .container .images::after {
+  position: absolute;
+  content: '';
+  top: 55%;
+  left: -200px;
+  transform: translateY(-50%);
+  height: 2px;
+  background-color: #fff;
+  width: 200px;
+}
+
 section .container .images figure {
   margin: 0;
 }
-section .container .images figure  img {
+
+section .container .images figure img {
   width: 100%;
+}
+
+section .container .images figure figcaption {
+  color: var(--tColor);
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: 5px;
+
+}
+
+section .container .images figure {
+  position: relative;
+}
+
+section .container .images figure:not(:first-child) figcaption {
+  display: none;
+}
+
+.images-container .move {
+  position: absolute;
+  right: 100px;
+  top: -50px;
+  display: flex;
+  align-items: flex-end;
+  gap: 60px;
+  height: 40px;
+}
+
+.images-container .move .line {
+  width: 300px;
+  height: 2px;
+  background-color: #939393;
+  position: relative;
+}
+
+.images-container .move .line span {
+  position: absolute;
+  height: 100%;
+  width: calc(100% / 3);
+  background-color: #fff;
+}
+
+.images-container .move .buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.images-container .move .buttons button {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #9f9797;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.images-container .move .buttons button:disabled {
+  cursor: no-drop;
+  color: #fff;
+  background-color: #9f9797;
+  border: 1px solid #fff;
+}
+
+@media (max-width: 1200px) {
+  .images-container .move {
+    gap: 20px;
+  }
+
+  .images-container .move .line {
+    width: 250px;
+  }
+
+  .images-container .move .buttons button {
+    width: 40px;
+    height: 30px;
+    font-size: 1.4rem;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+
+  section .container .images figure {
+    position: static;
+  }
+
+  section .container .images {
+    position: relative;
+  }
+
+  .images-container .move {
+    top: auto;
+    bottom: -80px;
+    flex-direction: column;
+    height: 60px;
+    gap: 8px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .images-container .move .buttons {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  section .container {
+    height: auto;
+    padding: 60px 0;
+    padding-bottom: 100px;
+  }
+
+  section .container .images-container {
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  section .container .images {
+    flex-direction: column;
+
+  }
+
+  section .container .images figure {
+    width: 100%;
+  }
+  section .container .images figure  figcaption{
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  section .container .images figure:not(:first-child) figcaption {
+    display: block;
+  }
+    section .container .images .move {
+      display: none;
+    }
 }
