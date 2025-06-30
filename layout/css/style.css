@@ -333,13 +333,13 @@ main .container .icons-social .icon-social a:hover i {
 
 
 
-section {
+.homes {
   background-color: #232323;
   border-top: 2px solid #fff;
   position: relative;
 }
 
-section::after {
+.homes::after {
   content: '';
   position: absolute;
   top: -80px;
@@ -351,9 +351,7 @@ section::after {
   overflow: hidden;
 }
 
-section .container {
-  display: flex;
-  align-items: center;
+.homes .container {
 
   padding: 100px 0;
 
@@ -361,13 +359,13 @@ section .container {
 }
 
 
-section .container .images {
+.homes .container .images {
   display: flex;
   align-items: flex-end;
   position: relative;
 }
 
-section .container .images::after {
+.homes .container .images::after {
   position: absolute;
   content: '';
   top: 55%;
@@ -378,15 +376,15 @@ section .container .images::after {
   width: 200px;
 }
 
-section .container .images figure {
+.homes .container .images figure {
   margin: 0;
 }
 
-section .container .images figure img {
+.homes .container .images figure img {
   width: 100%;
 }
 
-section .container .images figure figcaption {
+.homes .container .images figure figcaption {
   color: var(--tColor);
   font-size: 2rem;
   text-transform: uppercase;
@@ -397,11 +395,11 @@ section .container .images figure figcaption {
 
 }
 
-section .container .images figure {
+.homes .container .images figure {
   position: relative;
 }
 
-section .container .images figure:not(:first-child) figcaption {
+.homes .container .images figure:not(:first-child) figcaption {
   display: none;
 }
 
@@ -447,11 +445,39 @@ section .container .images figure:not(:first-child) figcaption {
   cursor: pointer;
 }
 
+
+
 .images-container .move .buttons button:disabled {
   cursor: no-drop;
   color: #fff;
   background-color: #9f9797;
   border: 1px solid #fff;
+}
+
+
+.homes .container .items {
+  color: var(--tColor);
+  font-size: 22px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.homes .container .items h2 {
+  font-size: 40px;
+
+}
+.homes .container .items h2 ,
+.homes .container .items p {
+  margin: 0;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+} 
+
+.homes .container .items span {
+  width: 1px;
+  height: 70px;
+  background-color: var(--tColor);
 }
 
 @media (max-width: 1200px) {
@@ -474,11 +500,11 @@ section .container .images figure:not(:first-child) figcaption {
 
 @media (max-width: 992px) {
 
-  section .container .images figure {
+  .homes .container .images figure {
     position: static;
   }
 
-  section .container .images {
+  .homes .container .images {
     position: relative;
   }
 
@@ -496,37 +522,72 @@ section .container .images figure:not(:first-child) figcaption {
     justify-content: center;
     width: 100%;
   }
+
+    .homes .container .items {
+    margin-top: 100px;
+  }
 }
 
 @media (max-width: 768px) {
-  section .container {
+  .homes .container {
     height: auto;
     padding: 60px 0;
     padding-bottom: 100px;
   }
 
-  section .container .images-container {
+
+  .homes .container .items h2,
+  .homes .container .items p {
+  font-size: 20px;
+
+}
+
+  
+  .homes .container .items {
+    flex-direction: column;
+  }
+
+  .homes .container .items span {
+    height: 1px;
+    width: 70px;
+    background-color: var(--tColor);
+  }
+
+  .homes .container .images-container {
     width: 100%;
     padding: 0 30px;
   }
 
-  section .container .images {
+  .homes .container .images {
     flex-direction: column;
 
   }
 
-  section .container .images figure {
+  .homes .container .images figure {
     width: 100%;
   }
-  section .container .images figure  figcaption{
+  .homes .container .images figure  figcaption{
     font-size: 1.2rem;
     margin-top: 10px;
   }
 
-  section .container .images figure:not(:first-child) figcaption {
+  .homes .container .images figure:not(:first-child) figcaption {
     display: block;
   }
-    section .container .images .move {
+    .homes .container .images .move {
       display: none;
     }
 }
+
+
+
+
+.dreams .dream-list ul li::before {
+  content: url(../images/star2.svg);
+    display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
