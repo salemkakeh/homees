@@ -645,6 +645,7 @@ main .container .icons-social .icon-social a:hover i {
   gap: 20px;
   width: 100%;
   align-items: center;
+  padding-top: 50px;
 }
 
 .dreams .dream-list ul li {
@@ -678,4 +679,20 @@ main .container .icons-social .icon-social a:hover i {
   cursor: pointer;
 }
 
+.dreams .dream-list .SVG-text {
+  position: absolute;
+  top: -150px;
+}
+.dreams .dream-list .SVG-text svg {
+position: absolute;
+left: 30px;
 
+}
+.dreams .dream-list .SVG-text h1 {
+  width: 200px;
+  font-size: 40px;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  
+
+}
