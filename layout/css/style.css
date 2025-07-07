@@ -579,15 +579,103 @@ main .container .icons-social .icon-social a:hover i {
     }
 }
 
+.dreams {
+  background-color: #232323;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.dreams .container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.dreams .dream-list {
+  width: 100%;
+  padding: 100px 0;
+  color: var(--tColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 27px;
+  background-color: #0000004f;
+  backdrop-filter: blur(20px);
+  position: relative; 
+  z-index: 2;
+}
 
+.dreams .dream-cont-cont {
+    width: 70%;
+  position: relative;
+}
+.dreams .dream-cont-cont  img {
+  position: absolute;
+  width: 300px;
+  top: -100px;
+  z-index: 1111;
+  left: -200px;
+}
 
+.dreams .cont-dream {
+  width: 100%;
+  position: relative;
+  background-color: #000000;
 
+}
+.dreams .dream-cont-cont::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient( -60deg, #9f9797 , transparent) ;
+  z-index: 0;
+}
+
+.dreams .cont-dream::after {
+    content: '';
+  position: absolute;
+  width: 600px;
+  height: 150px;
+  background-color: var(--tColor);
+  bottom: 100px;
+  left: -300px;
+}
+.dreams .dream-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.dreams .dream-list ul li {
+  transition: .3s;
+}
+.dreams .dream-list ul li:hover {
+  letter-spacing: 1px;
+}
 .dreams .dream-list ul li::before {
   content: url(../images/star2.svg);
-    display: inline-block;
-  width: 16px;
-  height: 16px;
+  display: inline-block;
+  width: 27px;
+  height: 27px;
   margin-right: 20px;
   vertical-align: middle;
+  transition: transform .6s;
+  transform-origin: center center; 
+  
 }
+.dreams .dream-list ul li:hover::before {
+  transform: rotate(360deg);
+  
+}
+
+
+.dreams .dream-list button {
+  padding: 10px 30px;
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-left: 80px;
+  cursor: pointer;
+}
+
 
