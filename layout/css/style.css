@@ -759,7 +759,7 @@ main .container .icons-social .icon-social a:hover i {
 .comment  {
   background-color: #232323;
   text-transform: capitalize;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .comment  .container .items ,
 .comment  .container .items .text-item ,
@@ -769,11 +769,44 @@ main .container .icons-social .icon-social a:hover i {
 .comment  .container .items  {
   gap: 30px;
   justify-content: space-between;
+  overflow-x: scroll;
+      padding: 30px 0;
+    }
+    .comment  .container .cont-items {
+  position: relative;
 
 }
 
+.comment  .container .cont-items::after,
+.comment  .container .cont-items::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 111;
+  pointer-events: none;
+}
+.comment  .container .cont-items::before {
+  background-image: linear-gradient(to left, #232323 , transparent);
+  right: 0;
+}
+.comment  .container .cont-items::after {
+  background-image: linear-gradient(to right, #232323 , transparent);
+  left: 0;
+}
+.comment  .container .items::-webkit-scrollbar {
+  height: 2px;
+}
+.comment  .container .items::-webkit-scrollbar-thumb {
+  background-color: var(--tColor);
+  width: 20px;
+}
+
+
 .comment  .container .items .cont-item {
     flex-grow: 1;
+    min-width: 50%;
 }
 .comment  .container .items .item {
   padding: 20px;
@@ -829,3 +862,99 @@ main .container .icons-social .icon-social a:hover i {
   flex-direction: column;
   gap: 6px;
 }
+
+
+@media (max-width: 768px) {
+  .comment  .container .items .item .image-text-item {
+    margin-top: 20px;
+  }
+  .comment  .container .items .item h1 {
+    margin-bottom: 35px;
+  font-size: 1.5rem;
+}
+.comment  .container .items .text-item {
+  align-self: center;
+  width: 100%;
+}
+}
+
+@media (max-width: 576px) {
+    .comment  .container .items .cont-item  {
+      min-width: 200px;
+    }
+    .comment  .container .cont-items::after,
+.comment  .container .cont-items::before { 
+  width: 50px;
+}
+}
+
+
+
+
+.project .container {
+  display: flex;
+  padding: 70px 0;
+  justify-content: space-between;
+}
+.project .container .left-proj,
+.project .container .right-proj {
+  flex-grow: 1;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 60px;
+}
+.project .container .right-proj {
+  align-items: center;
+
+ }
+.project .container .left-proj h1 {
+  font-size: 52px;
+  color: #fff;
+  /* text-indent: 40px; */
+  margin-left: 60px;
+}
+.project .container .left-proj img {
+  width: 400px;
+}
+
+.project .container .right-proj form {
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: #393939ca;
+  backdrop-filter: blur(10px);
+  gap: 30px;
+}
+.project .container .right-proj form .box-input {
+  position: relative;
+}
+.project .container .right-proj form .box-input input,
+.project .container .right-proj form .box-input textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--tColor);
+  resize: none;
+  height: 40px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.project .container .right-proj form .box-input label {
+  position: absolute;
+  bottom: 50%;
+  left: 10px;
+  transform: translateY(50%);
+  transition: .2s;
+  color: #fff;
+}
+
+.project .container .right-proj form .box-input input:focus + label,
+.project .container .right-proj form .box-input input:valid + label,
+.project .container .right-proj form .box-input textarea:focus + label, 
+.project .container .right-proj form .box-input textarea:valid + label {
+  bottom: 122%;
+ }
