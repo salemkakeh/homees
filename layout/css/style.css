@@ -32,7 +32,8 @@ header {
   position: relative;
 }
 
-header .container {
+header .container,
+footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,17 +46,24 @@ header .container h1 {
   font-style: italic;
 }
 
-header .container nav {
+header .container nav,
+footer .container nav {
   display: flex;
   gap: 4rem;
   font-size: 1.4rem;
 }
+footer .container nav {
+  font-size: 1rem;
 
-header .container nav li a {
+}
+
+header .container nav li a,
+footer .container nav li a {
   position: relative;
 }
 
-header .container nav li a::after {
+header .container nav li a::after,
+footer .container nav li a::after {
   content: '';
   position: absolute;
   height: 1px;
@@ -66,11 +74,13 @@ header .container nav li a::after {
   transition: width .2s;
 }
 
-header .container nav li a.active::after {
+header .container nav li a.active::after,
+footer .container nav li a.active::after {
   width: 25%;
 }
 
-header .container nav li a:hover::after {
+header .container nav li a:hover::after ,
+footer .container nav li a:hover::after {
   width: 100%;
 }
 
@@ -155,13 +165,18 @@ header .container .icons #menu-check:checked~aside {
 /* start responsive header */
 
 @media (max-width: 992px) {
-  header .container nav {
+  header .container nav,
+  footer .container nav {
     display: none;
   }
 
   header .container .icons .menu {
     display: flex;
   }
+    footer .container  {
+      flex-direction: column;
+      padding: 30px;
+    }
 }
 
 
@@ -890,10 +905,21 @@ main .container .icons-social .icon-social a:hover i {
 
 
 
+.project {
+  position: relative;
+}
 
+.project::after {
+  content: '';
+  position: absolute;
+  inset:  30% 0% 30% 0%;
+  background-color: #2e2e2e88;
+  z-index: -3226;
+}
 .project .container {
   display: flex;
-  padding: 70px 0;
+  padding: 70px 30px;
+  gap: 20px;
   justify-content: space-between;
 }
 .project .container .left-proj,
@@ -907,26 +933,39 @@ main .container .icons-social .icon-social a:hover i {
 }
 .project .container .right-proj {
   align-items: center;
+}
 
- }
 .project .container .left-proj h1 {
   font-size: 52px;
   color: #fff;
   /* text-indent: 40px; */
   margin-left: 60px;
 }
+
 .project .container .left-proj img {
   width: 400px;
 }
 
 .project .container .right-proj form {
-  padding: 50px 30px;
+  padding: 50px 60px;
   display: flex;
   flex-direction: column;
   width: 400px;
-  background-color: #393939ca;
+  background-color: #393939;
   backdrop-filter: blur(10px);
-  gap: 30px;
+  gap: 50px;
+
+}
+.project .container .right-proj .cont-form {
+  position: relative;
+
+}
+.project .container .right-proj .cont-form::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background-image: linear-gradient(215deg , var(--tColor) , var(--bgColor));
+  z-index: -3;
 }
 .project .container .right-proj form .box-input {
   position: relative;
@@ -940,16 +979,20 @@ main .container .icons-social .icon-social a:hover i {
   resize: none;
   height: 40px;
   outline: none;
-  padding-left: 10px;
+  padding-left: 0px;
+  overflow-y: hidden;
+  color: var(--tColor);
 }
 
 .project .container .right-proj form .box-input label {
   position: absolute;
   bottom: 50%;
-  left: 10px;
+  left: 0px;
   transform: translateY(50%);
   transition: .2s;
   color: #fff;
+  text-transform: capitalize;
+  pointer-events: none;
 }
 
 .project .container .right-proj form .box-input input:focus + label,
@@ -957,4 +1000,52 @@ main .container .icons-social .icon-social a:hover i {
 .project .container .right-proj form .box-input textarea:focus + label, 
 .project .container .right-proj form .box-input textarea:valid + label {
   bottom: 122%;
- }
+}
+
+
+.project .container .right-proj form button {
+  align-self: center;
+  padding: 10px 30px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: none;
+
+}
+.project .container .right-proj form button:hover {
+  opacity: 80%;
+}
+
+
+.project .container .right-proj p {
+  color: var(--tColor);
+  width: 400px;
+}
+
+
+
+@media (max-width: 992px) {
+  .project .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+    .project .container .left-proj {
+      justify-content: center;
+      align-items: center;
+    }
+        .project .container .left-proj  h1 {
+          margin-left: 0;
+        }
+}
+@media (max-width: 576px) {
+  .project .container .right-proj form,
+  .project .container .right-proj P {
+    max-width: 400px;
+    width: auto;
+  }
+  .project .container .left-proj img {
+    width: 300px;
+    /* aspect-ratio: 1; */
+  }
+}
