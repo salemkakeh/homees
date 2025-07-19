@@ -139,6 +139,7 @@ header .container aside {
   transform: scale(0);
   transform-origin: top right;
   filter: blur(20px);
+  z-index: 11111;
 }
 
 
