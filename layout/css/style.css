@@ -13,6 +13,7 @@ body::after {
   filter: blur(100px);
   transform: rotate(45deg);
   top: -75px;
+  z-index: 1111111;
 }
 
 body::before {
@@ -25,11 +26,16 @@ body::before {
   filter: blur(100px);
   transform: rotate(45deg);
   top: 205px;
+  z-index: 111111111;
+
 }
 
 /* start header customize */
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: #1c1c1c;
+  z-index: 1111111;
 }
 
 header .container,
